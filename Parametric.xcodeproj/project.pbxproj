@@ -40,8 +40,8 @@
 		223091BD18FB20F40022ECB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		223091BF18FB20F40022ECB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		223091C118FB20F40022ECB0 /* Parametric-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parametric-Prefix.pch"; sourceTree = "<group>"; };
-		223091C218FB20F40022ECB0 /* PMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMAppDelegate.h; sourceTree = "<group>"; };
-		223091C318FB20F40022ECB0 /* PMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAppDelegate.m; sourceTree = "<group>"; };
+		223091C218FB20F40022ECB0 /* PMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PMAppDelegate.h; path = SampleApp/PMAppDelegate.h; sourceTree = "<group>"; };
+		223091C318FB20F40022ECB0 /* PMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PMAppDelegate.m; path = SampleApp/PMAppDelegate.m; sourceTree = "<group>"; };
 		223091C518FB20F40022ECB0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		223091CB18FB20F40022ECB0 /* ParametricTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParametricTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		223091CC18FB20F40022ECB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -107,8 +107,7 @@
 		223091B918FB20F40022ECB0 /* Parametric */ = {
 			isa = PBXGroup;
 			children = (
-				223091C218FB20F40022ECB0 /* PMAppDelegate.h */,
-				223091C318FB20F40022ECB0 /* PMAppDelegate.m */,
+				223091E218FB25B40022ECB0 /* SampleApp */,
 				223091C518FB20F40022ECB0 /* Images.xcassets */,
 				223091BA18FB20F40022ECB0 /* Supporting Files */,
 			);
@@ -142,6 +141,15 @@
 				223091D518FB20F40022ECB0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		223091E218FB25B40022ECB0 /* SampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				223091C218FB20F40022ECB0 /* PMAppDelegate.h */,
+				223091C318FB20F40022ECB0 /* PMAppDelegate.m */,
+			);
+			name = SampleApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
