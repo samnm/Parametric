@@ -13,12 +13,14 @@
 		223091BE18FB20F40022ECB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 223091BC18FB20F40022ECB0 /* InfoPlist.strings */; };
 		223091C018FB20F40022ECB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 223091BF18FB20F40022ECB0 /* main.m */; };
 		223091C418FB20F40022ECB0 /* PMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223091C318FB20F40022ECB0 /* PMAppDelegate.m */; };
-		223091C618FB20F40022ECB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223091C518FB20F40022ECB0 /* Images.xcassets */; };
 		223091CD18FB20F40022ECB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223091CC18FB20F40022ECB0 /* XCTest.framework */; };
 		223091CE18FB20F40022ECB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223091B318FB20F40022ECB0 /* Foundation.framework */; };
 		223091CF18FB20F40022ECB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223091B718FB20F40022ECB0 /* UIKit.framework */; };
 		223091D718FB20F40022ECB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 223091D518FB20F40022ECB0 /* InfoPlist.strings */; };
 		223091D918FB20F40022ECB0 /* ParametricTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 223091D818FB20F40022ECB0 /* ParametricTests.m */; };
+		2253C1EE18FB279B00082B01 /* PMSampleAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253C1ED18FB279B00082B01 /* PMSampleAppViewController.m */; };
+		2253C1F118FB296700082B01 /* PMTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253C1F018FB296700082B01 /* PMTween.m */; };
+		2253C1F418FB3D5500082B01 /* PMEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253C1F318FB3D5500082B01 /* PMEasing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +42,19 @@
 		223091BD18FB20F40022ECB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		223091BF18FB20F40022ECB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		223091C118FB20F40022ECB0 /* Parametric-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parametric-Prefix.pch"; sourceTree = "<group>"; };
-		223091C218FB20F40022ECB0 /* PMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PMAppDelegate.h; path = SampleApp/PMAppDelegate.h; sourceTree = "<group>"; };
-		223091C318FB20F40022ECB0 /* PMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PMAppDelegate.m; path = SampleApp/PMAppDelegate.m; sourceTree = "<group>"; };
-		223091C518FB20F40022ECB0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		223091C218FB20F40022ECB0 /* PMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMAppDelegate.h; sourceTree = "<group>"; };
+		223091C318FB20F40022ECB0 /* PMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAppDelegate.m; sourceTree = "<group>"; };
 		223091CB18FB20F40022ECB0 /* ParametricTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParametricTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		223091CC18FB20F40022ECB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		223091D418FB20F40022ECB0 /* ParametricTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParametricTests-Info.plist"; sourceTree = "<group>"; };
 		223091D618FB20F40022ECB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		223091D818FB20F40022ECB0 /* ParametricTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParametricTests.m; sourceTree = "<group>"; };
+		2253C1EC18FB279B00082B01 /* PMSampleAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSampleAppViewController.h; sourceTree = "<group>"; };
+		2253C1ED18FB279B00082B01 /* PMSampleAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSampleAppViewController.m; sourceTree = "<group>"; };
+		2253C1EF18FB296700082B01 /* PMTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTween.h; sourceTree = "<group>"; };
+		2253C1F018FB296700082B01 /* PMTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTween.m; sourceTree = "<group>"; };
+		2253C1F218FB3C6F00082B01 /* PMEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMEasing.h; sourceTree = "<group>"; };
+		2253C1F318FB3D5500082B01 /* PMEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMEasing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +115,11 @@
 			isa = PBXGroup;
 			children = (
 				223091E218FB25B40022ECB0 /* SampleApp */,
-				223091C518FB20F40022ECB0 /* Images.xcassets */,
 				223091BA18FB20F40022ECB0 /* Supporting Files */,
+				2253C1F218FB3C6F00082B01 /* PMEasing.h */,
+				2253C1F318FB3D5500082B01 /* PMEasing.m */,
+				2253C1EF18FB296700082B01 /* PMTween.h */,
+				2253C1F018FB296700082B01 /* PMTween.m */,
 			);
 			path = Parametric;
 			sourceTree = "<group>";
@@ -148,8 +158,10 @@
 			children = (
 				223091C218FB20F40022ECB0 /* PMAppDelegate.h */,
 				223091C318FB20F40022ECB0 /* PMAppDelegate.m */,
+				2253C1EC18FB279B00082B01 /* PMSampleAppViewController.h */,
+				2253C1ED18FB279B00082B01 /* PMSampleAppViewController.m */,
 			);
-			name = SampleApp;
+			path = SampleApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +241,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				223091BE18FB20F40022ECB0 /* InfoPlist.strings in Resources */,
-				223091C618FB20F40022ECB0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2253C1F118FB296700082B01 /* PMTween.m in Sources */,
 				223091C018FB20F40022ECB0 /* main.m in Sources */,
+				2253C1EE18FB279B00082B01 /* PMSampleAppViewController.m in Sources */,
+				2253C1F418FB3D5500082B01 /* PMEasing.m in Sources */,
 				223091C418FB20F40022ECB0 /* PMAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +384,7 @@
 				GCC_PREFIX_HEADER = "Parametric/Parametric-Prefix.pch";
 				INFOPLIST_FILE = "Parametric/Parametric-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -383,6 +398,7 @@
 				GCC_PREFIX_HEADER = "Parametric/Parametric-Prefix.pch";
 				INFOPLIST_FILE = "Parametric/Parametric-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -446,6 +462,7 @@
 				223091DE18FB20F40022ECB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		223091DF18FB20F40022ECB0 /* Build configuration list for PBXNativeTarget "ParametricTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +471,7 @@
 				223091E118FB20F40022ECB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
