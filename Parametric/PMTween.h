@@ -11,22 +11,30 @@
 
 typedef void (^PMTweenUpdateBlock)(PMTween *tween);
 typedef void (^PMTweenCompletionBlock)(PMTween *tween);
-typedef CGFloat (^PMTweenEasingBlock)(CGFloat t);
 
 @interface PMTween : NSObject
 
 @property (nonatomic, strong) PMTweenUpdateBlock updateBlock;
 @property (nonatomic, strong) PMTweenUpdateBlock completionBlock;
-@property (nonatomic, strong) PMTweenEasingBlock easingBlock;
+@property (nonatomic, assign) PMEasingFunction easingFunction;
 
 @property (nonatomic, readonly) CGFloat currentValue;
 @property (nonatomic, readonly) CGFloat deltaTime;
 
 @property (nonatomic, assign) CGFloat startValue;
 @property (nonatomic, assign) CGFloat endValue;
+@property (nonatomic, assign) CGFloat delay;
 @property (nonatomic, assign) CGFloat duration;
 
-+ (PMTween *)tweenFrom:(CGFloat)start to:(CGFloat)end duration:(CGFloat)duration block:(PMTweenUpdateBlock)block;
++ (PMTween *)tween;
++ (PMTween *)tweenFrom:(CGFloat)start
+                    to:(CGFloat)end
+              duration:(CGFloat)duration
+                  ease:(PMEasingFunction)ease
+                 block:(PMTweenUpdateBlock)block;
+
+- (void)addTween:(PMTween *)tween;
+- (void)removeTween:(PMTween *)tween;
 
 - (void)start;
 - (void)stop;

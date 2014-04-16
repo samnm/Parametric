@@ -7,31 +7,38 @@
 
 #import "PMTween.h"
 
-@implementation PMSampleAppViewController {
-    UIView *_boxView;
-}
+@implementation PMSampleAppViewController
 
 - (void)loadView
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     self.view = view;
     
-    _boxView = [[UIView alloc] initWithFrame:CGRectMake(10, 100, 20, 20)];
-    _boxView.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:_boxView];
+    UIView *blueBox = [[UIView alloc] initWithFrame:CGRectMake(10, 100, 20, 20)];
+    blueBox.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:blueBox];
     
-    PMTween *tween = [PMTween tweenFrom:0 to:1 duration:3 block:^(PMTween *tween) {
-        CGSize bounds = _boxView.superview.frame.size;
-        _boxView.frame = CGRectMake((bounds.width - 20) * tween.currentValue,
-                                    bounds.height / 2,
-                                    20,
-                                    20);
-    }];
+    UIView *redBox = [[UIView alloc] initWithFrame:CGRectMake(10, 140, 20, 20)];
+    redBox.backgroundColor = [UIColor redColor];
+    [self.view addSubview:redBox];
+    
+    PMTween *tween = [PMTween tween];
+    [tween addTween:[PMTween tweenFrom:0 to:1 duration:3 ease:PMQuadraticEaseInOut block:^(PMTween *tween) {
+        CGSize bounds = blueBox.superview.frame.size;
+        blueBox.frame = CGRectMake((bounds.width - 20) * tween.currentValue,
+                                   bounds.height / 2,
+                                   20,
+                                   20);
+    }]];
+    [tween addTween:[PMTween tweenFrom:0 to:1 duration:3 ease:PMQuinticEaseInOut block:^(PMTween *tween) {
+        CGSize bounds = redBox.superview.frame.size;
+        redBox.frame = CGRectMake((bounds.width - 20) * tween.currentValue,
+                                   bounds.height / 2 + 30,
+                                   20,
+                                   20);
+    }]];
     tween.completionBlock = ^(PMTween *tween) {
         [tween start];
-    };
-    tween.easingBlock = ^(CGFloat t) {
-        return PMQuadraticEaseInOut(t);
     };
     [tween start];
 }
