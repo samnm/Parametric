@@ -5,6 +5,26 @@
 
 #import "PMEasing.h"
 
+CGFloat PMMap(CGFloat p, CGFloat s1, CGFloat e1, CGFloat s2, CGFloat e2) {
+    return ((p - s1) / (e1 - s1)) * (e2 - s2) + s2;
+}
+
+CGFloat PMDelay(CGFloat p, CGFloat delay) {
+    if (p > delay) {
+        return PMMap(p, delay, 1.0, 0, 1.0);
+    } else {
+        return 0;
+    }
+}
+
+CGFloat PMPad(CGFloat p, CGFloat pad) {
+    if (p < pad) {
+        return PMMap(p, 0, pad, 0, 1.0);
+    } else {
+        return 1;
+    }
+}
+
 // Modeled after the line y = x
 CGFloat PMLinearInterpolation(CGFloat p)
 {

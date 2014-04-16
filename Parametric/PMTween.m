@@ -8,10 +8,10 @@
 @interface PMTween ()
 @property (nonatomic, readonly) BOOL complete;
 @property (nonatomic, strong) CADisplayLink *displayLink;
-@property (nonatomic, strong) NSMutableArray *children;
 @end
 
 @implementation PMTween {
+    CFTimeInterval _duration;
     CFTimeInterval _timeExpired;
 }
 
@@ -19,38 +19,21 @@
     return [[self alloc] init];
 }
 
-+ (PMTween *)tweenFrom:(CGFloat)start
-                    to:(CGFloat)end
-              duration:(CGFloat)duration
-                  ease:(PMEasingFunction)ease
-                 block:(PMTweenUpdateBlock)block {
++ (PMTween *)tween:(PMTweenUpdateBlock)block {
     PMTween *tween = [self tween];
-    tween.startValue = start;
-    tween.endValue = end;
-    tween.duration = duration;
-    tween.easingFunction = ease;
     tween.updateBlock = block;
     return tween;
 }
 
-- (void)addTween:(PMTween *)tween {
-    [self.children addObject:tween];
+- (void)animateWithDuration:(CFTimeInterval)duration {
+    [self animateWithDuration:duration delay:0];
 }
 
-- (void)removeTween:(PMTween *)tween {
-    [self.children removeObject:tween];
-}
-
-- (void)start {
-    _currentValue = self.startValue;
-    _timeExpired = -self.delay;
-
+- (void)animateWithDuration:(CFTimeInterval)duration delay:(CFTimeInterval)delay {
+    _timeExpired = -delay;
+    _duration = duration;
+    
     [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-
-    for (PMTween *tween in self.children) {
-        tween->_currentValue = tween.startValue;
-        tween->_timeExpired = -tween.delay;
-    }
 }
 
 - (void)stop {
@@ -75,51 +58,38 @@
     return _displayLink;
 }
 
-- (PMEasingFunction)easingFunction {
-    if (!_easingFunction) {
-        _easingFunction = PMLinearInterpolation;
-    }
-    return _easingFunction;
-}
-
-- (NSMutableArray *)children {
-    if (!_children) {
-        _children = [NSMutableArray array];
-    }
-    return _children;
+- (void)setCurrentValue:(CGFloat)currentValue {
+    _currentValue = currentValue;
+    [self update];
 }
 
 #pragma mark - Private
      
 - (void)displayLinkTick:(CADisplayLink *)displayLink {
-    _deltaTime = displayLink.duration;
-    _timeExpired += _deltaTime;
-    _currentValue = self.easingFunction(_timeExpired / self.duration) * (self.endValue - self.startValue) + self.startValue;
+    CGFloat deltaTime = displayLink.duration;
+    _timeExpired += deltaTime;
+    _currentValue = _timeExpired / _duration;
     
-    BOOL isRunning = NO;
-    if (_timeExpired >= self.duration) {
-        _deltaTime = self.duration - _timeExpired;
-        _timeExpired = self.duration;
-        _currentValue = self.endValue;
-    } else if (_timeExpired >= 0) {
-        if (self.updateBlock) {
-            self.updateBlock(self);
-        }
-        isRunning = YES;
+    if (_timeExpired >= _duration) {
+        deltaTime = _duration - _timeExpired;
+        _timeExpired = _duration;
+        _currentValue = 1.0;
+    }
+    if (_timeExpired >= 0) {
+        [self update];
     }
     
-    for (PMTween *tween in self.children) {
-        [tween displayLinkTick:displayLink];
-        if (tween->_timeExpired < tween.duration) {
-            isRunning = YES;
-        }
-    }
-    
-    if (!isRunning) {
+    if (_timeExpired >= _duration) {
         [self stop];
         if (self.completionBlock) {
             self.completionBlock(self);
         }
+    }
+}
+
+- (void)update {
+    if (self.updateBlock) {
+        self.updateBlock(_currentValue);
     }
 }
 

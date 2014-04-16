@@ -5,6 +5,10 @@
 
 typedef CGFloat (*PMEasingFunction)(CGFloat t);
 
+CGFloat PMMap(CGFloat p, CGFloat s1, CGFloat e1, CGFloat s2, CGFloat e2);
+CGFloat PMDelay(CGFloat p, CGFloat delay);
+CGFloat PMPad(CGFloat p, CGFloat pad);
+
 // Linear interpolation (no easing)
 CGFloat PMLinearInterpolation(CGFloat p);
 

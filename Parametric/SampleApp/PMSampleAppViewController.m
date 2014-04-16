@@ -22,25 +22,26 @@
     redBox.backgroundColor = [UIColor redColor];
     [self.view addSubview:redBox];
     
-    PMTween *tween = [PMTween tween];
-    [tween addTween:[PMTween tweenFrom:0 to:1 duration:3 ease:PMQuadraticEaseInOut block:^(PMTween *tween) {
+    PMTween *blueTween = [PMTween tween:^(CGFloat t) {
+        t = PMExponentialEaseInOut(t);
         CGSize bounds = blueBox.superview.frame.size;
-        blueBox.frame = CGRectMake((bounds.width - 20) * tween.currentValue,
+        blueBox.frame = CGRectMake((bounds.width - 20) * t,
                                    bounds.height / 2,
                                    20,
                                    20);
-    }]];
-    [tween addTween:[PMTween tweenFrom:0 to:1 duration:3 ease:PMQuinticEaseInOut block:^(PMTween *tween) {
+    }];
+    PMTween *redTween = [PMTween tween:^(CGFloat t) {
+        t = PMExponentialEaseInOut(t);
         CGSize bounds = redBox.superview.frame.size;
-        redBox.frame = CGRectMake((bounds.width - 20) * tween.currentValue,
+        redBox.frame = CGRectMake((bounds.width - 20) * t,
                                    bounds.height / 2 + 30,
                                    20,
                                    20);
-    }]];
-    tween.completionBlock = ^(PMTween *tween) {
-        [tween start];
-    };
-    [tween start];
+    }];
+    [[PMTween tween:^(CGFloat t) {
+        blueTween.currentValue = PMPad(t, 0.5);
+        redTween.currentValue = PMDelay(t, 0.5);
+    }] animateWithDuration:3.0];
 }
 
 @end
