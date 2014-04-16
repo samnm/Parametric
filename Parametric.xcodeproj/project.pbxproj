@@ -16,8 +16,6 @@
 		223091CD18FB20F40022ECB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223091CC18FB20F40022ECB0 /* XCTest.framework */; };
 		223091CE18FB20F40022ECB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223091B318FB20F40022ECB0 /* Foundation.framework */; };
 		223091CF18FB20F40022ECB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223091B718FB20F40022ECB0 /* UIKit.framework */; };
-		223091D718FB20F40022ECB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 223091D518FB20F40022ECB0 /* InfoPlist.strings */; };
-		223091D918FB20F40022ECB0 /* ParametricTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 223091D818FB20F40022ECB0 /* ParametricTests.m */; };
 		2253C1EE18FB279B00082B01 /* PMSampleAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253C1ED18FB279B00082B01 /* PMSampleAppViewController.m */; };
 		2253C1F118FB296700082B01 /* PMTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253C1F018FB296700082B01 /* PMTween.m */; };
 		2253C1F418FB3D5500082B01 /* PMEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253C1F318FB3D5500082B01 /* PMEasing.m */; };
@@ -46,9 +44,6 @@
 		223091C318FB20F40022ECB0 /* PMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAppDelegate.m; sourceTree = "<group>"; };
 		223091CB18FB20F40022ECB0 /* ParametricTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParametricTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		223091CC18FB20F40022ECB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		223091D418FB20F40022ECB0 /* ParametricTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParametricTests-Info.plist"; sourceTree = "<group>"; };
-		223091D618FB20F40022ECB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		223091D818FB20F40022ECB0 /* ParametricTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParametricTests.m; sourceTree = "<group>"; };
 		2253C1EC18FB279B00082B01 /* PMSampleAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSampleAppViewController.h; sourceTree = "<group>"; };
 		2253C1ED18FB279B00082B01 /* PMSampleAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSampleAppViewController.m; sourceTree = "<group>"; };
 		2253C1EF18FB296700082B01 /* PMTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTween.h; sourceTree = "<group>"; };
@@ -85,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				223091B918FB20F40022ECB0 /* Parametric */,
-				223091D218FB20F40022ECB0 /* ParametricTests */,
 				223091B218FB20F40022ECB0 /* Frameworks */,
 				223091B118FB20F40022ECB0 /* Products */,
 			);
@@ -131,24 +125,6 @@
 				223091BC18FB20F40022ECB0 /* InfoPlist.strings */,
 				223091BF18FB20F40022ECB0 /* main.m */,
 				223091C118FB20F40022ECB0 /* Parametric-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		223091D218FB20F40022ECB0 /* ParametricTests */ = {
-			isa = PBXGroup;
-			children = (
-				223091D818FB20F40022ECB0 /* ParametricTests.m */,
-				223091D318FB20F40022ECB0 /* Supporting Files */,
-			);
-			path = ParametricTests;
-			sourceTree = "<group>";
-		};
-		223091D318FB20F40022ECB0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				223091D418FB20F40022ECB0 /* ParametricTests-Info.plist */,
-				223091D518FB20F40022ECB0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -248,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223091D718FB20F40022ECB0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223091D918FB20F40022ECB0 /* ParametricTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,14 +264,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				223091BD18FB20F40022ECB0 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		223091D518FB20F40022ECB0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				223091D618FB20F40022ECB0 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

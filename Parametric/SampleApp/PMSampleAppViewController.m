@@ -21,15 +21,19 @@
     [self.view addSubview:_boxView];
     
     PMTween *tween = [PMTween tweenFrom:0 to:1 duration:3 block:^(PMTween *tween) {
-        _boxView.frame = CGRectMake(10 + 100 * tween.currentValue, 100, 20, 20);
+        CGSize bounds = _boxView.superview.frame.size;
+        _boxView.frame = CGRectMake((bounds.width - 20) * tween.currentValue,
+                                    bounds.height / 2,
+                                    20,
+                                    20);
     }];
     tween.completionBlock = ^(PMTween *tween) {
         [tween start];
     };
     tween.easingBlock = ^(CGFloat t) {
-        NSLog(@"%.2f", t);
         return PMQuadraticEaseInOut(t);
     };
     [tween start];
 }
+
 @end

@@ -66,7 +66,7 @@
 - (void)displayLinkTick:(CADisplayLink *)displayLink {
     _deltaTime = displayLink.duration;
     _timeExpired += _deltaTime;
-    _currentValue = self.easingBlock(_timeExpired / self.duration) * (self.endValue - self.startValue);
+    _currentValue = self.easingBlock(_timeExpired / self.duration) * (self.endValue - self.startValue) + self.startValue;
     
     if (_timeExpired >= self.duration) {
         _deltaTime = self.duration - _timeExpired;
